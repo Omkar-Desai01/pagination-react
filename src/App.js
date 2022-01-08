@@ -19,6 +19,7 @@ export default function () {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const inputHandler = (e) => {
+    setCurrentPage(1);
     if (e.keyCode === 8) {
       console.log("back");
       axios
@@ -29,6 +30,7 @@ export default function () {
           );
         });
     }
+    console.log(e.target.value);
     setData(data.filter((da) => da.title.includes(e.target.value)));
   };
 
