@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Post from "./Post";
 import Pagination from "./Pagination";
-import "./app.css";
+// import "./app.css";
 
 export default function () {
   const [data, setData] = useState([]);
