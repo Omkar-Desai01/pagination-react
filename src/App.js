@@ -20,6 +20,14 @@ export default function () {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const inputHandler = (e) => {
     if (e.keyCode === 8) {
+      console.log("back");
+      axios
+        .get("https://jsonplaceholder.typicode.com/posts")
+        .then((response) => {
+          setData(
+            response.data.filter((da) => da.title.includes(e.target.value))
+          );
+        });
     }
     setData(data.filter((da) => da.title.includes(e.target.value)));
   };
