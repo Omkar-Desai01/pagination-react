@@ -19,7 +19,8 @@ export default function () {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   const inputHandler = (e) => {
-    console.log(e.target.value);
+    if (e.keyCode === 8) {
+    }
     setData(data.filter((da) => da.title.includes(e.target.value)));
   };
 
@@ -34,7 +35,7 @@ export default function () {
           type="text"
           placeholder="Search a very wide input..."
           id="input"
-          onInput={inputHandler}
+          onKeyDown={inputHandler}
         />
       </div>
       <Post posts={currentPosts} loading={loading} />
