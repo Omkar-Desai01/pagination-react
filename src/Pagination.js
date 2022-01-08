@@ -12,7 +12,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <ul className="list">
         <div class="ui horizontal bulleted list">
           {pageNumbers.map((number) => (
-            <a onClick={() => paginate(number)} href="!#" class="item">
+            <a onClick={() => paginate(number)} href="#" class="item">
               {number}{" "}
             </a>
           ))}
