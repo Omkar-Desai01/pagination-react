@@ -14,9 +14,14 @@ export default function () {
       setData(response.data);
     });
   }, []);
+
   console.log(data, loading);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const inputHandler = (e) => {
+    console.log(e.target.value);
+    setData(data.filter((da) => da.title.includes(e.target.value)));
+  };
 
   const indexOfLastPage = currentPage * 8;
   const indexOfFirstPage = indexOfLastPage - 8;
@@ -29,6 +34,7 @@ export default function () {
           type="text"
           placeholder="Search a very wide input..."
           id="input"
+          onInput={inputHandler}
         />
       </div>
       <Post posts={currentPosts} loading={loading} />
