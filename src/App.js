@@ -32,8 +32,8 @@ export default function () {
     setData(data.filter((da) => da.title.includes(e.target.value)));
   };
 
-  const indexOfLastPage = currentPage * 8;
-  const indexOfFirstPage = indexOfLastPage - 8;
+  const indexOfLastPage = currentPage * 7;
+  const indexOfFirstPage = indexOfLastPage - 7;
   const currentPosts = data.slice(indexOfFirstPage, indexOfLastPage);
 
   return (
@@ -48,7 +48,7 @@ export default function () {
       </div>
       <Post posts={currentPosts} loading={loading} />
       <Pagination
-        postsPerPage={8}
+        postsPerPage={7}
         totalPosts={data.length}
         paginate={paginate}
       />
